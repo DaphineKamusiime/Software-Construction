@@ -1,0 +1,47 @@
+
+Software Development Life Cycle (SDLC) Practices in Tech Giants
+---------------------------------------------------------------
+
+
+Introduction
+------------
+The Software Development Life Cycle (SDLC) is a cornerstone process in the development and maintenance of software systems. This document outlines the SDLC models adopted by Spotify, Netflix, and Google, highlighting their unique approaches in the tech industry.
+
+
+Common Phases in SDLC
+----------------------
+- Requirement Analysis: Involves gathering and analyzing requirements from stakeholders to define the scope of the project.
+- Feasibility Study: Assesses technical, operational, and economic viability of the project.
+- System Design: Entails creating system architecture, module design, and specifying hardware and software requirements.
+- Implementation (Coding): The process of writing code according to design specifications and conducting code reviews.
+- Testing: Involves developing and executing test cases, and fixing defects.
+- Deployment: Includes deploying the software in production and monitoring the system.
+- Maintenance and Support: Focuses on addressing user-reported issues, and updating the system.
+
+
+
+Spotify's Agile Methodology
+---------------------------
+- Approach: Adopts an Agile methodology, primarily Scrum, with unique adaptations.
+- Iterations: Development is structured in short, two-week sprints.
+- Organizational Structure: Comprises Squads and Tribes for efficient functioning.
+- Customer Involvement: Regular customer feedback is integral, with showcases for input.
+- Tools: Utilizes Jira and other Agile project management tools.
+
+Netflix's DevOps Culture
+------------------------
+- Automation: Extensive use of automation in testing, deployment, and monitoring.
+- Continuous Deployment: Automated deployment of code changes after testing.
+- Microservices Architecture: Relies on microservices for scalability.
+- Monitoring: Implements real-time monitoring with automatic rollback for issues.
+- Tools: Employs a variety of internal and open-source tools for DevOps.
+
+Google's Agile-DevOps Blend
+---------------------------
+- Iterations: Follows Agile sprints with continuous integration for frequent updates.
+- Collaboration: Emphasizes collaboration between development and operations.
+- Tools: Uses a mix of in-house and open-source tools, including Jenkins for CI/CD.
+
+Conclusion
+----------
+Each of these tech giants – Spotify, Netflix, and Google – demonstrates unique adaptations of the SDLC to suit their organizational needs and project requirements. Their practices underscore the importance of flexibility and continuous improvement in software development.
