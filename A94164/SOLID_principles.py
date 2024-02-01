@@ -20,7 +20,7 @@ class Library:
         # Logging logic
         pass
 
-
+#Extract Book Management Functions
 class BookManagement:
     def checkout(self, book_id, user_id):
         # Checkout logic
@@ -32,4 +32,10 @@ class BookManagement:
 
     def add_book(self, book):
         # Add book logic
+        pass
+
+#Extract Notification Functions
+class NotificationManager:
+    def send_overdue_notices(self):
+        # Send notices logic
         pass
