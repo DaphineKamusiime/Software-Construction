@@ -3,7 +3,8 @@ class Employee:
         self.name = name
         self.role = role
 
-#The Report class is carrying out so many responsibilities: Generating reports based on employee roles, writing manager and  developer reports.
+#The Report class is carrying out so many responsibilities: 
+#Generating reports based on employee roles, writing manager and  developer reports.
 class Report:
     def generate_report(self, employee):
         if employee.role == "Manager":
@@ -17,8 +18,10 @@ class Report:
     def write_developer_report(self, developer):
         print(f"Developer Report: {developer.name}")
 
-
 class BonusCalculator:
+# Violation of Open/Closed Principle (OCP): 
+#The BonusCalculator class is open for extension but closed for modification.
+   
     def calculate_bonus(self, employee):
         if employee.role == "Manager":
             return employee.calculate_manager_bonus()
