@@ -1,48 +1,30 @@
-#Library managment system
 class Library:
+    def __init__(self):
+        # Initialize the newly created classes
+        self.book_management = BookManagement()
+        self.notification_manager = NotificationManager()
+        self.activity_logger = ActivityLogger()
+
     def checkout(self, book_id, user_id):
-        # Checkout logic
-        pass
+        # Delegate to BookManagement
+        self.book_management.checkout(book_id, user_id)
+        self.activity_logger.log_activity(f"Book {book_id} checked out by User {user_id}")
 
     def return_book(self, book_id, user_id):
-        # Return logic
-        pass
+        # Delegate to BookManagement
+        self.book_management.return_book(book_id, user_id)
+        self.activity_logger.log_activity(f"Book {book_id} returned by User {user_id}")
 
     def add_book(self, book):
-        # Add book logic
-        pass
+        # Delegate to BookManagement
+        self.book_management.add_book(book)
+        self.activity_logger.log_activity(f"New book added: {book}")
 
     def send_overdue_notices(self):
-        # Send notices logic
-        pass
+        # Delegate to NotificationManager
+        self.notification_manager.send_overdue_notices()
+        self.activity_logger.log_activity("Overdue notices sent")
 
     def log_activity(self, activity):
-        # Logging logic
-        pass
-
-#Extract Book Management Functions
-class BookManagement:
-    def checkout(self, book_id, user_id):
-        # Checkout logic
-        pass
-
-    def return_book(self, book_id, user_id):
-        # Return logic
-        pass
-
-    def add_book(self, book):
-        # Add book logic
-        pass
-
-#Extract Notification Functions
-class NotificationManager:
-    def send_overdue_notices(self):
-        # Send notices logic
-        pass
-
-
-#Extract Logging Function
-class ActivityLogger:
-    def log_activity(self, activity):
-        # Logging logic
-        pass
+        # Directly use ActivityLogger
+        self.activity_logger.log_activity(activity)
