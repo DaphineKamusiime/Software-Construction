@@ -39,3 +39,10 @@ class NotificationManager:
     def send_overdue_notices(self):
         # Send notices logic
         pass
+
+
+#Extract Logging Function
+class ActivityLogger:
+    def log_activity(self, activity):
+        # Logging logic
+        pass
