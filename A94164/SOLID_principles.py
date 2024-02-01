@@ -28,3 +28,11 @@ class Library:
     def log_activity(self, activity):
         # Directly use ActivityLogger
         self.activity_logger.log_activity(activity)
+
+class EBookManagement(BookManagement):
+    def checkout(self, book_id, user_id):
+        # Specific logic for checking out e-books
+        # Note: This overrides the checkout method from BookManagement
+        pass
+
+    # Note: return_book and add_book methods inherit behavior from BookManagement
