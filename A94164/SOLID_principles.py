@@ -1,7 +1,6 @@
 class Library:
-    def __init__(self):
-        # Initialize the newly created classes
-        self.book_management = BookManagement()
+    def __init__(self, book_management: BookManagement):
+        self.book_management = book_management
         self.notification_manager = NotificationManager()
         self.activity_logger = ActivityLogger()
 
