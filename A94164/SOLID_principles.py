@@ -35,3 +35,6 @@ class EBookManagement(BookManagement):
         pass
 
     # Note: return_book and add_book methods inherit behavior from BookManagement
+
+# Example of substituting BookManagement with EBookManagement
+library = Library(EBookManagement())
