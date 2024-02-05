@@ -1,0 +1,40 @@
+Code Review and Documentation:
+
+Single Responsibility Principle (SRP) violation:
+The Report class is responsible for both generating reports and determining how to format the reports based on the employee's role. 
+This violates SRP because a class should have only one reason to change, but this class has multiple responsibilities (generating reports and formatting them).
+Rationale: If the formatting requirements change or if there are additional report types, it would require modifications to this class, increasing its complexity and making it more error-prone.
+
+Open/Closed Principle (OCP) violation:
+The Report class is not closed for modification and open for extension. If a new role is introduced (e.g., "Quality Assurance"), the generate_report method needs to be modified to accommodate this new role.
+Rationale: This violates OCP because the class should be open for extension (new roles) but closed for modification (existing code shouldn't need to change).
+
+Liskov Substitution Principle (LSP) violation:
+Manager and Developer inherit from Employee, but the BonusCalculator relies on specific role checks (if employee.role == "Manager"). This means that Manager and Developer are not substitutable for Employee in the context of BonusCalculator.
+Rationale: LSP states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program. Here, substituting Employee with Manager or Developer in BonusCalculator could lead to unexpected behavior.
+
+Interface Segregation Principle (ISP) violation:
+There's no explicit interface, but conceptually, Report and BonusCalculator might force clients to depend on methods they don't use. For instance, a client interested in generating reports might need to depend on bonus calculation methods from BonusCalculator.
+Rationale: ISP suggests that clients should not be forced to depend on methods they do not use. Breaking down interfaces into smaller, specific ones can prevent this.
+
+Dependency Inversion Principle (DIP) violation:
+Report and BonusCalculator both directly depend on concrete implementations (Manager and Developer). This makes them tightly coupled to specific implementations rather than abstractions.
+Rationale: DIP states that high-level modules should not depend on low-level modules. Instead, both should depend on abstractions. Here, both Report and BonusCalculator should depend on an abstraction (like an interface) rather than concrete implementations.
+
+Refactoring Plan:
+
+SRP Refactoring:
+1. Separate the responsibilities of generating reports and formatting them into different classes.
+Introduce an interface for report generation to allow for different report formats.
+
+OCP Refactoring:
+Implement a strategy pattern for report generation to allow for easy extension when new roles are introduced.
+
+LSP Refactoring:
+Refactor BonusCalculator to use polymorphism instead of role checks to calculate bonuses.
+
+ISP Refactoring:
+basedreak down Report and BonusCalculator into smaller, more specific interfaces to avoid forcing clients to depend on methods they don't use.
+
+DIP Refactoring:
+Introduce abstractions (interfaces) for Manager and Developer to decouple Report and BonusCalculator from concrete implementations.
