@@ -1,56 +1,62 @@
-class Employee:
+from abc import ABC, abstractmethod
+
+# Base Employee class with abstract methods
+class Employee(ABC):
     def __init__(self, name, role):
         self.name = name
         self.role = role
 
-class Report:
-    def generate_report(self, employee):
-        if employee.role == "Manager":
-            self.write_manager_report(employee)
-        elif employee.role == "Developer":
-            self.write_developer_report(employee)
+    @abstractmethod
+    def calculate_bonus(self):
+        """Calculate bonus for an employee."""
+        pass
 
-    def write_manager_report(self, manager):
-        print(f"Manager Report: {manager.name}")
+    @abstractmethod
+    def generate_report(self):
+        """Generate a report for an employee."""
+        pass
 
-    def write_developer_report(self, developer):
-        print(f"Developer Report: {developer.name}")
-
-class BonusCalculator:
-    def calculate_bonus(self, employee):
-        if employee.role == "Manager":
-            return employee.calculate_manager_bonus()
-        elif employee.role == "Developer":
-            return employee.calculate_developer_bonus()
-
+# Manager class inheriting from Employee
 class Manager(Employee):
-    def calculate_manager_bonus(self):
+    def calculate_bonus(self):
+        # Specific bonus calculation for Manager
         return 1000
 
+    def generate_report(self):
+        # Specific report generation for Manager
+        print(f"Manager Report: {self.name}")
+
     def manage_team(self):
+        # Additional responsibility specific to Manager
         print(f"{self.name} is managing the team.")
 
+# Developer class inheriting from Employee
 class Developer(Employee):
-    def calculate_developer_bonus(self):
+    def calculate_bonus(self):
+        # Specific bonus calculation for Developer
         return 500
 
+    def generate_report(self):
+        # Specific report generation for Developer
+        print(f"Developer Report: {self.name}")
+
     def code_review(self):
+        # Additional responsibility specific to Developer
         print(f"{self.name} is conducting a code review.")
 
+# Main execution block
 if __name__ == "__main__":
     manager = Manager("Alice", "Manager")
     developer = Developer("Bob", "Developer")
 
-    report_generator = Report()
-    report_generator.generate_report(manager)
-    report_generator.generate_report(developer)
+    employees = [manager, developer]
 
-    bonus_calculator = BonusCalculator()
-    manager_bonus = bonus_calculator.calculate_bonus(manager)
-    developer_bonus = bonus_calculator.calculate_bonus(developer)
+    # Loop through each employee to generate reports and calculate bonuses
+    for employee in employees:
+        employee.generate_report()  # Polymorphic call to generate report
+        bonus = employee.calculate_bonus()
+        print(f"{employee.role} Bonus: ${bonus}")
 
-    print(f"Manager Bonus: ${manager_bonus}")
-    print(f"Developer Bonus: ${developer_bonus}")
-
+    # Executing role-specific behaviors
     manager.manage_team()
     developer.code_review()
