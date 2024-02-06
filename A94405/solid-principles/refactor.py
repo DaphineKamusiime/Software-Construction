@@ -1,9 +1,8 @@
-#creating employee instances and report generation
-
+#calculating bonuses using bonuscalculator
 if __name__ == "__main__":
-    manager = Manager("Alice", "Manager")
-    developer = Developer("Bob", "Developer")
+    bonus_calculator = BonusCalculator()
+    manager_bonus = bonus_calculator.calculate_bonus(manager)
+    developer_bonus = bonus_calculator.calculate_bonus(developer)
 
-    report_generator = Report()
-    report_generator.generate_report(manager)
-    report_generator.generate_report(developer)
+    print(f"Manager Bonus: ${manager_bonus}")
+    print(f"Developer Bonus: ${developer_bonus}")
