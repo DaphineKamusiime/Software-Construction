@@ -1,8 +1,4 @@
-from abc import ABC, abstractmethod
-
-#Implement Report Generation Class:
-
-class ReportGenerator(ABC):
-    @abstractmethod
-    def generate_report(self, employee):
-        pass
+#Implement BonusCalculator Class:
+class BonusCalculator:
+    def calculate_bonus(self, employee):
+        return employee.calculate_bonus()
