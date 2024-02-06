@@ -1,9 +1,7 @@
-
-#implement manager class with  bonus calculation
-
-class Manager(Employee):
+#implementing developer class with bonus calculation
+class Developer(Employee):
     def calculate_bonus(self):
-        return 1000
+        return 500
 
-    def manage_team(self):
-        print(f"{self.name} is managing the team.")
+    def code_review(self):
+        print(f"{self.name} is conducting a code review.")
