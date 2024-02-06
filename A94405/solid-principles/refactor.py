@@ -1,10 +1,6 @@
 from abc import ABC, abstractmethod
-#creating an abstract class for the employees 
-class Employee(ABC):
-    def __init__(self, name, role):
-        self.name = name
-        self.role = role
 
+class ReportGenerator(ABC):
     @abstractmethod
-    def calculate_bonus(self):
+    def generate_report(self, employee):
         pass
