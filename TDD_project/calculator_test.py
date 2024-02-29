@@ -1,6 +1,7 @@
 import unittest
 from calculator import Calculator
 
+
 class TestCalculator(unittest.TestCase):
 
     def test_addition(self):
@@ -36,7 +37,8 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(Calculator().multiply(-5, 3), -15)
         self.assertEqual(Calculator().divide(-10, 2), -5)
 
-#additional oprations
+    # additional oprations
+    # exponential test function
     def test_exponentiation(self):
         calc = Calculator()
         self.assertEqual(calc.exponentiate(2, 3), 8)
@@ -44,16 +46,20 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calc.exponentiate(0, 5), 0)
         self.assertEqual(calc.exponentiate(5, 0), 1)
 
+    # square root test function
     def test_square_root(self):
         calc = Calculator()
         self.assertEqual(calc.square_root(9), 3)
         self.assertEqual(calc.square_root(16), 4)
         self.assertEqual(calc.square_root(0), 0)
 
+    # absolute value test function
     def test_absolute_value(self):
         calc = Calculator()
         self.assertEqual(calc.absolute_value(5), 5)
         self.assertEqual(calc.absolute_value(-5), 5)
         self.assertEqual(calc.absolute_value(0), 0)
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     unittest.main()
