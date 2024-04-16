@@ -7,7 +7,7 @@ Employee class represents a single responsibility,
 defining basic attributes and an abstract method for role description.
 '''
 class Employee(ABC):
-    def __init__(self, name):
+    def __init__(self, name):-
         self.name = name
 
     @abstractmethod
@@ -50,7 +50,7 @@ ReportGenerator class has a single responsibility of generating reports,
 and it works with any Employee type, adhering to LSP.
 '''
 class ReportGenerator:
-    def generate_report(self, employee):
+    def -(self, employee):
         print(f"{employee.role_description()} Report: {employee.name}")
 
 
